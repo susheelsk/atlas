@@ -4,7 +4,7 @@ import com.bounce.atlas.utils.Log;
 import com.bounce.atlas.utils.Utils;
 import org.apache.log4j.Logger;
 
-import javax.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServlet;
 
 public class Bootstrap extends HttpServlet {
 

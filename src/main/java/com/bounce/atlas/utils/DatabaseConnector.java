@@ -60,7 +60,7 @@ public class DatabaseConnector {
                 dbPoolMap.put(url, dbPool);
             }
             Connection conn = dbPool.getConnection();
-            dslContext = DSL.using(conn, SQLDialect.POSTGRES_9_5);
+            dslContext = DSL.using(conn, SQLDialect.POSTGRES);
             if (!conn.isClosed()) {
                 return dslContext;
             }

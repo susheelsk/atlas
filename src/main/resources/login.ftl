@@ -28,7 +28,15 @@
                         <!--<button class="btn btn-lg btn-google btn-block text-uppercase g-signin2" data-onsuccess="onSignIn" type="submit"><i-->
                                 <!--class="fab fa-google mr-2"></i> Sign in with Google-->
                         <!--</button>-->
-                    <div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="50" data-longtitle="true">Sign in with google</div>
+                    <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="50" data-longtitle="true">Sign in with google</div> -->
+                    <!-- <div class="g_id_signin" data-onsuccess="onSignIn" data-type="standard"></div> -->
+                    <div id="g_id_onload"
+                             data-client_id="${googleclientid}"
+                             data-callback="onSignIn">
+                        </div>
+                    <div class="g_id_signin" data-onsuccess="onSignIn" data-type="standard"></div>
+
+
                     </form>
                 </div>
             </div>

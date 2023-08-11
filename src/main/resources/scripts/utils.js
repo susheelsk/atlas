@@ -108,9 +108,10 @@
     }
 
     function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log("Logged in successfully as : " + profile.getEmail());
-        var cookie = "token=" + gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token;
+//        var profile = googleUser.getBasicProfile();
+//        console.log("Logged in successfully as : " + profile.getEmail());
+        var cookie = "token=" + googleUser.credential;
+        console.log("Token : " + cookie);
         document.cookie = cookie;
 
         if(window.location.pathname.startsWith('/login')) {

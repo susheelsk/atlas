@@ -99,12 +99,17 @@
     }
 
     function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
+        var token = getToken();
+        fetch("https://oauth2.googleapis.com/revoke?token=" + token, {
+            method: 'POST',
+            headers: {
+                'Content-type' : 'application/x-www-form-urlencoded'
+            }
+        }).then((data) => {
             console.log('User signed out.');
             document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
             window.location = "/login";
-        });
+        })
     }
 
     function onSignIn(googleUser) {

@@ -124,15 +124,11 @@ public class Utils {
 
     private static Pair<String, Integer> getRedisHostPortPair() {
         try {
-            InputStream inputStream = new FileInputStream("config.ini");
-            Properties prop = new Properties();
-            prop.load(inputStream);
-
             String redisHost = PropertiesLoader.getProperty("redis.host");
             Integer redisPort = Integer.parseInt(PropertiesLoader.getProperty("redis.port"));
 
             return new Pair<>(redisHost, redisPort);
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return new Pair<>("127.0.0.1", 6379);

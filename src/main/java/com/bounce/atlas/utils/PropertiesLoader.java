@@ -16,10 +16,7 @@ public class PropertiesLoader {
         if(map == null || map.size() < 1) {
             try {
                 String env = System.getProperty("env", "prod");
-                String configPath = "config.ini";
-                if(env.equals("local")) {
-                    configPath = "config-local.ini";
-                }
+                String configPath = System.getProperty("user.dir") + "/" + "config.ini";
                 InputStream inputStream = new FileInputStream(configPath);
                 Properties prop = new Properties();
                 prop.load(inputStream);
